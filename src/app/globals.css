@@ -75,6 +75,10 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'Great Vibes';
   src: url('../../public/GreatVibes-Regular.ttf') format('truetype');

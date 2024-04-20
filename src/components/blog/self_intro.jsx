@@ -23,7 +23,7 @@ export default function SelfIntro() {
             A Web Developer I'm a passionate web developer and tech blogger.
             Currently, my main focus is on frontend And I specialize in using
             <span className=" bg-t_blue px-2 rounded">
-              React, TailwindCSS and Next.js;
+              React, TailwindCSS and Next.js
             </span>
             Also using
             <span className=" bg-t_pink px-2 rounded">

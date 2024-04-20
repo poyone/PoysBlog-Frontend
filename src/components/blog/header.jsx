@@ -37,7 +37,7 @@ export default function Header({ theme, handleThemechange }) {
     >
       {/* left logo */}
       <div className="flex-1 text-start">
-        <div className="logo-container p-1 mt-2 rounded-md">
+        <div className="logo-container p-1 mt-2 ml-4 rounded-md">
           <Link href={"/"} className=" text-2xl font-handWritefont ">
             Poe. S
           </Link>
@@ -56,7 +56,7 @@ export default function Header({ theme, handleThemechange }) {
           return (
             <div
               key={index}
-              className="h-10 pr-4 text-base-content rounded-btn inline-flex items-center justify-center font-semibold active:hover:scale-95 active:focus:scale-95 transition duration-200 ease-in-out cursor-pointer"
+              className="h-10 pr-4 font-normal inline-flex items-center justify-center active:hover:scale-95 active:focus:scale-95 transition duration-200 ease-in-out cursor-pointer"
             >
               <Link href={item.link}>{item.name}</Link>
             </div>

@@ -50,7 +50,7 @@ export default function ArticleCategory() {
                 return (
                   <div
                     key={index + title}
-                    className={`menu_button border h-10 pl-4 mt-4 mr-8 text-base-content rounded-btn inline-flex items-center justify-start font-semibold active:hover:scale-95 active:focus:scale-95 transition duration-200 ease-in-out cursor-pointer`}
+                    className={`menu_button border-b h-10 pl-4 mt-4 mr-8 text-base-content rounded-btn inline-flex items-center justify-start font-semibold active:hover:scale-95 active:focus:scale-95 transition duration-200 ease-in-out cursor-pointer`}
                     onClick={() => handleCategoryChange(title)}
                   >
                     {title}
