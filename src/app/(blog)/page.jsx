@@ -4,11 +4,14 @@ import SwiperComponent from "@/components/blog/use_swiper";
 
 
 export default async function Page() {
-
+  const response = await fetch('http://127.0.0.1:2333/blog/')
+  const data = await response.json(); 
+  const content = data.content
+  
   return (
     <SwiperComponent>
       <SelfIntro />
-      <ArticleCategory />
+      <ArticleCategory data={content} />
     </SwiperComponent>
   );
 }

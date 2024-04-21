@@ -5,18 +5,12 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNewspaper } from "@fortawesome/free-regular-svg-icons";
 
-export default function ArticleCategory() {
+export default function ArticleCategory({ data }) {
+  
   const categories = [
-    [
-      "Frontend",
-      "bg-t_blue",
-      [
-        "How does component communicate in React",
-        "How does components rendering within useEffect mode",
-      ],
-    ],
-    ["Backend", "bg-t_yellow", ["FastApi chapter 1", "FastApi chapter 2"]],
-    ["AI", "bg-t_pink", ["Dive into Transformer", "Kaggle Tricks"]],
+    [data[0].category, "bg-t_blue", data[0].titles],
+    [data[1].category, "bg-t_yellow", data[1].titles],
+    [data[2].category, "bg-t_pink", data[2].titles]
   ];
   const [currentCategory, setCategory] = useState("Frontend");
   const [styles, setStyles] = useState({

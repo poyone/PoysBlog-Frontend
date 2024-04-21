@@ -1,4 +1,4 @@
-import { SidebarNav } from "@/components/admin/view/siderbar";
+import { SidebarNav } from "@/components/ui/siderbar";
 
 export default function Layout({ children }) {
   const sidebarNavItems = [

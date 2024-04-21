@@ -23,11 +23,11 @@ export default function Search() {
   }, []);
 
   return (
-    <label className="h-10 w-auto pl-4 pr-2 bg-base-200 flex items-center gap-2 border-b border-slate-200">
+    <label className="h-10 w-auto pl-4 pr-2 bg-base-200 flex items-center gap-2 border-b border-slate-200 focus-within:border-black transition-colors duration-500">
       <input
         ref={inputRef}
         type="text"
-        className="my-input w-14 italic text-black font-light focus:md:w-28 bg-base-200 outline-none transition-width duration-300 ease-in-out "
+        className="my-input w-14 italic text-black font-light focus:w-28  bg-base-200 outline-none transition-width duration-500 ease-in-out"
         placeholder="Search"
       />
       <kbd className="pointer-events-none right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">

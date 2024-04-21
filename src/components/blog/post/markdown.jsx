@@ -9,19 +9,30 @@ export default function MarkdownToHtml({ content }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
-      className="prose max-w-screen-md p-10 pl-14 shadow-md"
+      className="prose  lg:max-w-screen-md 2xl:max-w-screen-lg p-10 pl-14 shadow-md"
       components={{
         p: Highlight,
-        h1: ({ children }) => <h1 data-heading={children}>{children}</h1>,
-        h2: ({ children }) => <h2 data-heading={children}>{children}</h2>,
-        h3: ({ children }) => <h3 data-heading={children}>{children}</h3>,
-        h4: ({ children }) => <h4 data-heading={children}>{children}</h4>,
-        h5: ({ children }) => <h5 data-heading={children}>{children}</h5>,
-        h6: ({ children }) => <h6 data-heading={children}>{children}</h6>,
+        h1: ({ children }) => <h1 className="text-4xl font-bold mb-6" data-heading={children}>{children}</h1>,
+        h2: ({ children }) => <h2 className="text-3xl font-bold mb-6 mt-4" data-heading={children}>{children}</h2>,
+        h3: ({ children }) => <h3 className="text-2xl font-bold mb-6 mt-2" data-heading={children}>{children}</h3>,
+        h4: ({ children }) => <h4 className="text-xl font-bold mb-6 mt-2" data-heading={children}>{children}</h4>,
+        h5: ({ children }) => <h5 className="text-lg font-bold mb-6" data-heading={children}>{children}</h5>,
+        h6: ({ children }) => <h6 className="text-base font-bold mb-6" data-heading={children}>{children}</h6>,
+        ul: ({ children }) => <ul className="list-none">{children}</ul>,
+        li: ({ children }) => (
+          <li className="before:content-['•'] before:text-lg before:mr-2">
+            {children}
+          </li>
+        ),
+        a: ({ children, href }) => (
+          <a href={href} className="text-blue-500 underline">
+            {children}
+          </a>
+        ),
         code(props) {
-          const { children, className, node, ...rest } = props;
+          const { children, className, node, inline, ...rest } = props;
           const match = /language-(\w+)/.exec(className || "");
-          return match ? (
+          return !inline && match ? (
             <SyntaxHighlighter
               {...rest}
               PreTag="div"
@@ -30,7 +41,7 @@ export default function MarkdownToHtml({ content }) {
               style={dracula}
             />
           ) : (
-            <code {...rest} className={className}>
+            <code {...rest} className={"bg-t_pink rounded px-2"}>
               {children}
             </code>
           );

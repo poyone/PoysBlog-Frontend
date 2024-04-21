@@ -5,8 +5,9 @@ import Search from "../ui/header_search";
 import { useEffect, useRef } from "react";
 import { Moon, Sun } from "lucide-react";
 import { Button } from "../ui/button";
-
+import { usePathname } from "next/navigation";
 export default function Header({ theme, handleThemechange }) {
+  const pathname = usePathname()
   const nav_list = [
     { name: "Home", link: "/" },
     { name: "Category", link: "/category" },
@@ -53,12 +54,13 @@ export default function Header({ theme, handleThemechange }) {
 
         {/* nav links */}
         {nav_list.map((item, index) => {
+          const activeStyle = pathname == item.link ? "text-black border-black" : ''
           return (
             <div
               key={index}
-              className="h-10 pr-4 font-normal inline-flex items-center justify-center active:hover:scale-95 active:focus:scale-95 transition duration-200 ease-in-out cursor-pointer"
+              className={`${activeStyle} h-10 pr-4 font-normal inline-flex items-center justify-center border-b border-slate-200 hover:border-black transition-colors duration-300 `}
             >
-              <Link href={item.link}>{item.name}</Link>
+              <Link className=" hover:text-black transition-all duration-500" href={item.link}>{item.name}</Link>
             </div>
           );
         })}
