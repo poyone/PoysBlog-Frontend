@@ -21,7 +21,7 @@ import {
 } from "@/components/ui//form";
 import { Input } from "@/components/ui/input";
 
-import { useToast } from "@/components/ui/use-toast";
+import { showToast } from "@/components/ui/show_toast";
 import {
   Popover,
   PopoverContent,
@@ -61,7 +61,6 @@ export default function ArticleForm() {
       // createdAt: "05-20-2013",
     },
   });
-  const { toast } = useToast();
 
   const fileRef = form.register("file");
 
@@ -71,39 +70,12 @@ export default function ArticleForm() {
       const resDetails = await UploadArticle(data);
 
       if (resDetails.state) {
-        toast({
-          title: "Upload Successful",
-          description: (
-            <pre className="mt-2 w-[340px] rounded-md bg-green-100 p-4">
-              <code className="text-green-800 text-wrap">
-                {JSON.stringify(resDetails.detail, null, 2)}
-              </code>
-            </pre>
-          ),
-        });
+        showToast("Upload Successful", resDetails.detail, true);
       } else {
-        toast({
-          title: "Upload Failed",
-          description: (
-            <pre className="mt-2 w-[340px] rounded-md bg-red-100 p-4">
-              <code className="text-red-800 text-wrap">
-                {JSON.stringify(resDetails.detail, null, 2)}
-              </code>
-            </pre>
-          ),
-        });
+        showToast("Upload Failed", resDetails.detail, false);
       }
     } catch (error) {
-      toast({
-        title: "Error",
-        description: (
-          <pre className="mt-2 w-[340px] rounded-md bg-red-100 p-4">
-            <code className="text-red-800 text-wrap">
-              {JSON.stringify(error, null, 2)}
-            </code>
-          </pre>
-        ),
-      });
+      showToast("Error", error, false);
     }
   }
 
@@ -134,7 +106,11 @@ export default function ArticleForm() {
             <FormItem>
               <FormLabel>Title</FormLabel>
               <FormControl>
-                <Input type="text" placeholder="React Essentials: A Guide to ..." {...field} />
+                <Input
+                  type="text"
+                  placeholder="React Essentials: A Guide to ..."
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

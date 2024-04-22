@@ -9,7 +9,7 @@ export default function MarkdownToHtml({ content }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
-      className="prose  lg:max-w-screen-md 2xl:max-w-screen-lg p-10 pl-14 shadow-md"
+      className="lg:max-w-screen-md 2xl:max-w-screen-lg p-10 pl-14 shadow-md"
       components={{
         p: Highlight,
         h1: ({ children }) => <h1 className="text-4xl font-bold mb-6" data-heading={children}>{children}</h1>,
