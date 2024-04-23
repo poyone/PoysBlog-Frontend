@@ -1,20 +1,12 @@
 "use client"
 
-import Link from "next/link";
-import { useRouter } from 'next/navigation'
-import { Button } from "../ui/button";
 import Cookies from 'js-cookie';
+import Link from "next/link";
+import { Button } from "../ui/button";
+import { useRouter } from 'next/navigation'
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "../ui/card";
 import { Input } from "../ui/input";
-import { Label } from "../ui/label";
 import { useForm } from "react-hook-form";
 import { LoginAdmin } from "@/lib/actions";
 import {
@@ -54,14 +46,13 @@ export default function LoginForm() {
   });
   const showToast = useShowToast();
   const router = useRouter()
-
   async function onSubmit(data) {
     try {
       const resDetails = await LoginAdmin(data);
 // itisapassword
       if (resDetails.state) {
         showToast("Login Successful",resDetails.detail.token_type, true);
-        Cookies.set('token', resDetails.detail.access_token);
+        Cookies.set('token', resDetails.detail.access_token)
         router.push('/admin')
       } else {
         showToast("Login Failed", resDetails.detail, false);
