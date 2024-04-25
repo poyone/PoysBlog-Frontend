@@ -17,7 +17,7 @@ import {
   FormLabel,
   FormMessage,
 } from "../ui/form";
-import { useShowToast } from "../ui/show_toast";
+import useShowToast from '../ui/show_toast';
 import { PasswordInput } from "../ui/password_input";
 export const description =
   "A login form with email and password. There's an option to login with Google and a link to sign up if you don't have an account.";

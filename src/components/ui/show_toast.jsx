@@ -1,7 +1,7 @@
 // ui/use_show_toast.js
 import { useToast } from "./use-toast";
 
-export function useShowToast() {
+export default function useShowToast() {
   const { toast } = useToast();
 
   function showToast(title, detail, isSuccess) {

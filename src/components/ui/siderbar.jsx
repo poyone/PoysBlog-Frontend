@@ -47,7 +47,7 @@ export function SidebarNav({ className, items, ...props }) {
           {item.title}
         </Link>
       ))}
-      <Button variant="ghost" className=" justify-start absolute bottom-10 w-full" onClick={handleLogout}>Log Out</Button>
+      <Button variant="ghost" className=" justify-start absolute bottom-14 w-full" onClick={handleLogout}>Log Out</Button>
     </nav>
   );
 }

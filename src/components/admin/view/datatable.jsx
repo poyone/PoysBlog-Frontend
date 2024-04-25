@@ -52,13 +52,13 @@ export default function DataTable({ columns, data }) {
     },
     initialState: {
       pagination: {
-        pageSize: 5, // 设置每页最多显示五条数据
+        pageSize: 10, // 设置每页最多显示五条数据
       },
     },
   });
 
   return (
-    <div className="w-full p-4">
+    <div className="w-full h-dvh p-4">
       {/* 顶部整体 */}
       <div className="flex items-center py-4">
         {/* 左侧搜索框 */}

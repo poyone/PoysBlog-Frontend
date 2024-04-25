@@ -21,7 +21,7 @@ import {
 } from "@/components/ui//form";
 import { Input } from "@/components/ui/input";
 
-import { showToast } from "@/components/ui/show_toast";
+import useShowToast from "@/components/ui/show_toast";
 import {
   Popover,
   PopoverContent,
@@ -63,7 +63,7 @@ export default function ArticleForm() {
   });
 
   const fileRef = form.register("file");
-
+  const showToast = useShowToast();
   async function onSubmit(data) {
     data.date = format(data.createdAt, "MM-dd-yyyy");
     try {
