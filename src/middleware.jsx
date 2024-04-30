@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const allowedOrigins = ["http://127.0.0.1:2333"];
+const allowedOrigins = ["http://127.0.0.1:2333", "localhost:3000", "www.poys.icu"];
 const protectedRoutes = ['/admin'];
 const publicRoutes = ['/login', '/blog', '/'];
 
@@ -20,7 +20,8 @@ export const config = {
 };
 
 function handleCors(req, res) {
-  const origin = req.headers.get("origin");
+  // const origin = req.headers.get("origin");
+  const origin = req.headers.get("x-forwarded-host");
   if (origin && allowedOrigins.includes(origin)) {
     res.headers.set("Access-Control-Allow-Origin", origin);
     res.headers.set(

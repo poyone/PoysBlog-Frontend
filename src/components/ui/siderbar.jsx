@@ -14,13 +14,13 @@ export function SidebarNav({ className, items, ...props }) {
 
   const handleLogout = async () => {
     try {
-      // 清除客户端的登录状态和 token
-      localStorage.removeItem("token");
-
-      // 重定向到登录页面
-      router.push("/login");
+      // Clear the client's login status and token cookie
+      document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/;';
+  
+      // Redirect to the login page
+      router.push('/login');
     } catch (error) {
-      console.error("退出登录失败:", error);
+      console.error('退出登录失败:', error);
     }
   };
 
