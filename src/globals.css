@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@keyframes up_show {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+.arise_up_animation {
+    animation-name: up_show;
+    animation-duration: 1s;
+    animation-direction: forwards;
+    animation-timing-function: ease-out;
+}
+
+
+@keyframes left_slide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+@keyframes right_slide {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+.title_glass {
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(200,228,205,0.25);
+    animation: left_slide 300ms ease-in-out forwards;
+}
+.category_glass {
+    background: rgba(255,255,255,0.5);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+@layer components {
+    .scaled_animation {
+       @apply transition-transform duration-300 ease-in-out hover:scale-110 active:scale-110
+    }
+}
