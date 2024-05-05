@@ -40,16 +40,35 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(200,228,205,0.25);
-    animation: left_slide 300ms ease-in-out forwards;
+    animation: right_slide 300ms ease-in-out forwards;
 }
 .category_glass {
     background: rgba(255,255,255,0.5);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
+.show_left {
+    animation: right_slide 300ms ease-in-out forwards;
+}
 
+
+/* tailwindCSS */
 @layer components {
     .scaled_animation {
        @apply transition-transform duration-300 ease-in-out hover:scale-110 active:scale-110
     }
+}
+
+
+/* react date picker */
+/* 覆盖被选择日期的样式 */
+.rdp-day_selected {
+    background-color: transparent !important;
+    border: 1px solid black !important;
+    color: black !important; 
+  }
+
+  /* 覆盖今天日期的样式 */
+.rdp-day_today {
+    font-weight: normal !important; 
 }
