@@ -53,7 +53,7 @@ function LoginForm() {
   return (
     <form
       onSubmit={handleLoginSubmit}
-      className="py-4 mt-8 mx-2 border border-black rounded-md"
+      className="py-4 mt-8 mx-2 border border-black rounded-md md:max-w-80 md:mx-auto xl:relative xl:top-10"
     >
       <p className="font-semibold tracking-tight text-2xl p-3">Login</p>
       <div className="w-auto flex flex-col mx-3 mb-2">

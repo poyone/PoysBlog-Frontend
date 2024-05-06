@@ -40,7 +40,7 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(200,228,205,0.25);
-    animation: right_slide 300ms ease-in-out forwards;
+    /* animation: left_slide 300ms ease-in-out both; */
 }
 .category_glass {
     background: rgba(255,255,255,0.5);

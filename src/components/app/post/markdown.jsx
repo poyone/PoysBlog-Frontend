@@ -9,15 +9,14 @@ export default function MarkdownToHtml({ content }) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
-      className="px-4 pt-2"
+      className="px-4 pt-2 mt-12 xl:mt-24 h-auto md:mx-12 xl:mx-20 xl:text-xl"
       components={{
         p: Highlight,
-        h1: ({ children }) => <h1 className="text-4xl font-bold mb-6" data-heading={children}>{children}</h1>,
-        h2: ({ children }) => <h2 className="text-3xl font-bold mb-6 mt-4" data-heading={children}>{children}</h2>,
-        h3: ({ children }) => <h3 className="text-2xl font-bold mb-6 mt-2" data-heading={children}>{children}</h3>,
-        h4: ({ children }) => <h4 className="text-xl font-bold mb-6 mt-2" data-heading={children}>{children}</h4>,
-        h5: ({ children }) => <h5 className="text-lg font-bold mb-6" data-heading={children}>{children}</h5>,
-        h6: ({ children }) => <h6 className="text-base font-bold mb-6" data-heading={children}>{children}</h6>,
+        h1: ({ children }) => <h1 className="text-4xl xl:text-5xl font-bold mb-6" data-heading={children}>{children}</h1>,
+        h2: ({ children }) => <h2 className="text-3xl xl:text-4xl font-bold mb-6 mt-4" data-heading={children}>{children}</h2>,
+        h3: ({ children }) => <h3 className="text-2xl xl:text-3xl font-bold mb-6 mt-2" data-heading={children}>{children}</h3>,
+        h4: ({ children }) => <h4 className="text-xl xl:text-2xl font-bold mb-6 mt-2" data-heading={children}>{children}</h4>,
+        h5: ({ children }) => <h5 className="text-lg xl:text-xl font-bold mb-6" data-heading={children}>{children}</h5>,
         ul: ({ children }) => <ul className="list-none">{children}</ul>,
         li: ({ children }) => (
           <li className="before:content-['•'] before:text-lg before:mr-2">

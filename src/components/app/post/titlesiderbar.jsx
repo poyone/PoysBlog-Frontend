@@ -54,11 +54,11 @@ export default function TitleSidebar({ content }) {
 
   return (
     <div className="flex flex-col relative">
-      <button className="fixed scaled_animation top-16 right-4 z-10" onClick={handleClick}>
-        <Menu className="size-7 bg-white hover:text-blue-500 rounded" />
+      <button className="fixed scaled_animation top-16 right-4 z-10 md:top-12 xl:top-[95px]" onClick={handleClick}>
+        <Menu className="size-7 md:size-8 xl:size-12 bg-white hover:text-blue-500 rounded" />
       </button>
       <ul
-        className={`fixed w-auto h-auto z-20 top-24 right-0 max-h-[80vh] overflow-auto title_glass px-4  
+        className={`fixed xl:text-lg w-auto h-auto z-20 top-24 md:top-20 lg:top-36 right-0 max-h-[80vh] overflow-auto title_glass px-4  
       ${isExpand ? "" : "hidden"}`}
       >
         {titles.map((title, index) => (
@@ -79,7 +79,6 @@ export default function TitleSidebar({ content }) {
               }
             }}
           >
-            {/* {title.level === 3 ? "> " : ""} */}
             {title.title}
           </li>
         ))}

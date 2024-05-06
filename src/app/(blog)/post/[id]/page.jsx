@@ -6,7 +6,7 @@ export default async function Page({ params }) {
   const data = await response.json();
 
   return (
-    <div className="relative mt-12 w-screen h-auto">
+    <div className="relative">
       <MarkdownToHtml content={data.content} />
 
       <TitleSidebar content={data.content} />

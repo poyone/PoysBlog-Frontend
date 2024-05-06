@@ -14,11 +14,11 @@ export default function Header() {
   const currentPath = usePathname();
 
   return (
-    <div className="header_bar fixed bg-white top-0 z-10 shadow w-full h-12 flex justify-between items-center px-4">
-      <Link href={"/"} className="left_logo text-xl ">Poy.S</Link>
-      <div className="basis-1/2 flex justify-end ">
-        <label htmlFor="search_bar" className="size-full flex items-center">
-          <Search className="size-5" />
+    <div className="header_bar fixed bg-white top-0 z-20 shadow w-full h-12 xl:h-24 flex justify-between items-center px-4">
+      <Link href={"/"} className="left_logo text-xl xl:text-3xl">Poy.S</Link>
+      <div className="basis-1/2 flex justify-end xl:text-2xl">
+        <label htmlFor="search_bar" className=" flex items-center">
+          <Search className="size-5 xl:size-8" />
           <input type="text" name="search_bar" id="search_bar" className="hidden" />
         </label>
         {data.map((item, index) => {

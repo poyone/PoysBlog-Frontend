@@ -11,14 +11,14 @@ export default function CategoryMenu() {
 
   const data = ["Frontend", "Backend", "Cloud"];
   return (
-    <div className="fixed z-10 top-12 flex flex-col w-auto h-auto ">
+    <div className="fixed z-10 top-12 xl:top-24 flex flex-col w-auto h-auto md:pl-4 xl:pl-8">
       <div
         className={`w-6 pt-2 h-auto transition-transforms duration-500 ease-out ${
           isExpanded ? "w-screen category_glass" : ""
         }`}
       >
         <button onClick={handleClick}>
-          <Menu className="absolute top-[5px] left-[4px]" />
+          <Menu className="relative top-[5px] left-[4px] xl:size-8" />
         </button>
         <div className="flex flex-col items-start ">
         {data.map((item, index) => {
@@ -30,11 +30,11 @@ export default function CategoryMenu() {
                 key={index}
                 className="relative ml-2"
               >
-                <span className="text-2xl font-normal">
+                <span className="text-2xl xl:text-4xl font-normal">
                   {firstLetter}
                 </span>
                 {/* restOfWord hidden or visible based on menu state */}
-                <span className={`${isExpanded ? "" : "hidden"}`}>
+                <span className={`${isExpanded ? "" : "hidden"} xl:text-xl`}>
                   {restOfWord}
                 </span>
               </button>
