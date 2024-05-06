@@ -1,29 +1,49 @@
 "use server";
 
-export async function HandleUpload(formdata) {
-  const itemID = queryData.get("itemID");
-  if (itemID === "1") {
-    return "Added to cart";
-  } else {
-    return "Couldn't add to cart: the item is sold out.";
-  }
-}
+import { cookies } from "next/headers";
+import { objectToString } from "./utils";
 
-export async function submitForm(formData) {
-  console.log("123");
+export async function HandleUpload(formData) {
+  const cookieStore = cookies()
+  const token = cookieStore.get("token")?.value;
+  
   try {
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    const response = { ok: 200, details: formData };
+    const response = await fetch("http://127.0.0.1:2333/api/admin/upload", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+    const responseDetails = await response.json();
 
-    console.log(response);
     if (response.ok) {
-      return true;
+      return {code: response.status, details: responseDetails}
     } else {
-      console.error("Failed to upload:", await response.text());
-      return false;
+      return {code: response.status}
     }
   } catch (error) {
-    console.error("Error submitting form:", error);
-    return false;
+    return error
   }
 }
+
+export async function LoginAdmin(formData) {
+
+  try {
+    const response = await fetch("http://127.0.0.1:2333/api/admin/login", {
+      method: "POST",
+      body: formData,
+    });
+    const responseDetails = await response.json();
+
+    if (response.ok) {
+      // return `Successful login ${responseText}`
+      return {code: response.status, details: responseDetails}
+    } else {
+      return {code: response.status, details: responseDetails}
+    }
+  } catch (error) {
+    return error
+  }
+}
+

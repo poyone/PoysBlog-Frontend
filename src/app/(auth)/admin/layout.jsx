@@ -1,4 +1,4 @@
-import AdminMenu from "@/components/admin/menu";
+import AdminMenu from "@/components/auth/admin/menu";
 
 export default async function AdminLayout({children}) {
   return (

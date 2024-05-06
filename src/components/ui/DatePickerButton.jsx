@@ -5,12 +5,12 @@ import "react-day-picker/dist/style.css"; // 导入样式
 import format from "date-fns/format";
 
 const DatePickerButton = ({ onDateChange }) => {
-  const [selectedDay, setSelectedDay] = useState(new Date());
+  const [selectedDay, setSelectedDay] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const buttonRef = useRef();
 
   // 格式化日期显示
-  const formattedDate = format(selectedDay, "yyyy-MM-dd");
+  // const formattedDate = format(selectedDay, "yyyy-MM-dd");
 
   // 点击按钮切换日历显示
   const toggleDatePicker = () => {
@@ -45,7 +45,7 @@ const DatePickerButton = ({ onDateChange }) => {
         onClick={toggleDatePicker}
         className=" border border-black p-1 rounded"
       >
-        {formattedDate}
+        {selectedDay ? format(selectedDay, "yyyy-MM-dd"): "Pick Date"}
       </button>
       {isVisible && (
         <div className="absolute bg-white border border-black rounded-md z-10 mt-2">
