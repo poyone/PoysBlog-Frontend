@@ -12,7 +12,7 @@ export function ArticleCard({ className, items, ...props }) {
       )}
       {...props}
     >
-      {items.map((item, index) => {
+      {items ? items.map((item, index) => {
         const backgroundColorClass = `${['bg-t_blue', 'bg-t_yellow', 'bg-t_pink'][index % 3]}`;
         return (
           <div key={item.title} className={`p-2 m-2 md:ml-8 xl:ml-16 w-auto h-24 xl:h-36 rounded flex flex-col justify-between hover:mx-0 hover:z-10 hover:shadow-xl transition-all duration-500 xl:duration-1000 ${backgroundColorClass}`}>
@@ -29,7 +29,7 @@ export function ArticleCard({ className, items, ...props }) {
             </div>
           </div>
         );
-      })}
+      }): "Reflesh page"}
     </div>
   );
 }
