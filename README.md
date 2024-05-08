@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# PoysBlog Frontend 🌟
 
-## Getting Started
+Welcome to the frontend repository of PoysBlog! This project is built with Next.js, a popular React framework for building server-rendered applications, and Shadcn, a modern UI component library.
+To explore the backend of PoysBlog, please visit the [PoysBlog Backend Repository](https://github.com/poyone/PoysBlog-Backend/tree/dev).
 
-First, run the development server:
+## 🛠️ Technologies Used
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Next.js** - A powerful React framework that enables server-side rendering, route pre-fetching, and more.
+- **Shadcn** - A beautifully designed UI component library for building modern and responsive user interfaces.
+- **JWT (JSON Web Tokens)** - A secure method for authenticating requests between the frontend and backend.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To get started with PoysBlog Frontend, follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Clone the repository:
+   ```
+   git clone https://github.com/poyone/PoysBlog-Frontend.git
+   ```
 
-## Learn More
+2. Install the dependencies:
+   ```
+   cd PoysBlog-Frontend
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Configure the environment variables:
+   - Create a `.env` file in the root directory.
+   - Add the necessary environment variables (e.g., API endpoint, JWT secret).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Start the development server:
+   ```
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Open your browser and visit `http://localhost:3000` to see the application in action!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📧 Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+If you have any questions, suggestions, or feedback, feel free to reach out to us:
+
+- Email: [poyone1222@gmail.com](mailto:poyone1222@gmail.com)
+- GitHub: [poyone](https://github.com/poyone)
+
+We appreciate your interest in PoysBlog and look forward to hearing from you!
+
+Happy blogging! ✨
