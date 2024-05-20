@@ -58,7 +58,7 @@ export default function TitleSidebar({ content }) {
         <Menu className="size-7 md:size-8 xl:size-12 bg-white hover:text-blue-500 rounded" />
       </button>
       <ul
-        className={`fixed xl:text-lg w-auto h-auto z-20 top-24 md:top-20 lg:top-36 right-0 max-h-[80vh] overflow-auto title_glass px-4  
+        className={`fixed xl:text-lg w-auto h-auto z-20 top-24 md:top-20 xl:top-36 right-0 max-h-[80vh] overflow-auto title_glass px-4  
       ${isExpand ? "" : "hidden"}`}
       >
         {titles.map((title, index) => (
