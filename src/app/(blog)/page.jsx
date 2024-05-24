@@ -1,9 +1,40 @@
 import HeroSection from "@/components/app/home/heroSection";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-col h-min items-center pt-12 xl:pt-24 md:min-h-64">
-      <HeroSection />
-    </main>
+    // <main className="flex flex-col h-min items-center pt-12 xl:pt-24 md:min-h-64">
+    //   <HeroSection />
+    // </main>
+    <NotComplete />
   );
+}
+
+
+function NotComplete () {
+  return (
+    <div className="z-50 absolute w-screen bg-white flex flex-col items-center">
+    <Image
+      src="/Eris32.webp"
+      // {
+      //   "https://poysblog-1323001667.cos.ap-shanghai.myqcloud.com/eris/Eris32.webp"
+      // }
+      // priority
+      alt="Eris32"
+      width={300}
+      height={100}
+      className="mx-auto"
+    />
+    <p className=" text-lg text-center">
+      I've made a new folder for it. Go ahead and check it out.
+    </p>
+    <Link
+      className="mx-auto shadow rounded p-2 hover:ring-1 hover:ring-red-400"
+      href={"/category"}
+    >
+      Click Me!
+    </Link>
+  </div>
+  )
 }
