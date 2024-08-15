@@ -19,7 +19,7 @@ export default async function About() {
       </p>
       <Link
         className="mx-auto shadow rounded p-2 hover:ring-1 hover:ring-red-400"
-        href={"/"}
+        href={"/category"}
       >
         Click Me!
       </Link>
